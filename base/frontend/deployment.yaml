@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecom-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecom-frontend
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ecom-frontend
+    spec:
+      containers:
+        - name: ecom-frontend
+          image: 3020244252/ecom-frontend:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "300m"
+              memory: "256Mi"

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecom-order-service
+spec:
+  selector:
+    app: ecom-order-service
+  ports:
+    - port: 3002
+      targetPort: 3002
+      nodePort: 30282
+  type: NodePort

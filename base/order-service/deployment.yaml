@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecom-order-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecom-order-service
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ecom-order-service
+    spec:
+      containers:
+        - name: ecom-order-service
+          image: 3020244252/ecom-order-service:latest
+          ports:
+            - containerPort: 3002
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "300m"
+              memory: "256Mi"
