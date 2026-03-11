@@ -4,7 +4,6 @@ This project uses the RollingUpdate deployment strategy for Kubernetes deploymen
 
 ## Benefits
 
-- No full service interruption during updates
 - Easy to manage in a local Minikube environment
 - Suitable for this project because the services are small and independently deployed
 
